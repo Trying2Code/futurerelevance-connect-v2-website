@@ -39,6 +39,14 @@ JOBS = [
 def hello_world():
   return render_template('home.html', jobs=JOBS, company_name='FuturRelevance Connect')
 
+@app.route("/login")
+def login_page():
+    return render_template('login.html')
+
+@app.route("/signup")
+def signup_page():
+    return render_template('signup.html')
+
 @app.route("/about")
 def about_page():
     return render_template('about.html')
