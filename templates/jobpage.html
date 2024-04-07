@@ -1,0 +1,36 @@
+<!Doctype>
+<html>
+  <head>
+  <title>{{job.title}} - FutureRelevance</title>
+    {% include 'bootstrap.html' %}
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    <div class="container">
+      <h1 class="text-center mt-4 mb-4">FutureRelevance Connect</h1><p>
+       
+    <h4>{{job.title}}</h4>
+    <h4 class="lead mt-0">{{job.location}}</h4>
+    <h4>Salary</h4>
+    <p>{{job.currency}}{{job.salary}}</p>
+    <h4>Responsibilities</h4>
+      <ul>
+        {% for line in job.responsibilities.split("\n") %}
+        <li>{{line}}</li>
+        {% endfor %}
+      </ul>
+    <h4>Requirements</h4>
+      <ol>
+        {% for line in job.requirements.split("\n") %}
+          <li>{{line}}</li>
+        {% endfor %}
+      </ol>
+    <h4>How to Apply</h4>
+       <div class="container">
+    {% include 'footer.html' %}
+        </body>
+      </html>
+
+
+
+
