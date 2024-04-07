@@ -1,43 +1,14 @@
-from flask import Flask, redirect, url_for, render_template, jsonify
+from flask import Flask, render_template, jsonify
+from database import load_jobs_from_db
 
 app = Flask(__name__)
 
-JOBS = [
- {
-  'id': 1,
-  'title': 'Python Programmer',
-  'location': 'Cape Town, South Africa',
- 'salary': 'R80,000.00pm'
- },
-{
-  'id': 2,
-  'title': 'Data Analyst',
-  'location': 'Cape Town, South Africa',
- 'salary': 'market related'
- },
-{
-  'id': 3,
-  'title': 'Front-end Engineer',
-  'location': 'Cape Town, South Africa',
- 'salary': 'R45,000.00pm'
- },
-{
-    'id': 3,
-    'title': 'Java Developer',
-    'location': 'Remote, South Africa',
-   'salary': 'R45,000.00pm'
-},
-  {
-      'id': 3,
-      'title': 'Full-Stack Developer',
-      'location': 'Remote, South Africa',
-     'salary': 'Market Related'
-  }
-]
-
 @app.route("/")
-def hello_world():
-  return render_template('home.html', jobs=JOBS, company_name='FuturRelevance Connect')
+def hello_FutureRelevavce():
+  jobs = load_jobs_from_db()
+  return render_template('home.html',
+                         jobs=jobs,
+                         company_name='FuturRelevanc Connect')
 
 @app.route("/login")
 def login_page():
@@ -55,9 +26,11 @@ def about_page():
 def frequently_page():
     return render_template('frequently.html')
 
-@app.route("/jobs")
+@app.route("/api/jobs")
 def list_jobs():
-  return jsonify(JOBS)
+    jobs = load_jobs_from_db()
+    return jsonify(jobs)
+    
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)
