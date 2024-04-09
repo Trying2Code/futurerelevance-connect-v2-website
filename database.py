@@ -29,13 +29,8 @@ def load_job_from_db(id):
     else:
       return rows[0]._asdict()
       
-def add_application_to_db(job_id, data):
+def add_applications_to_db(job_id, data):
   with engine.connect() as conn: 
     query = text("INSERT INTO applications (job_id, first_name, last_name, email, street_address, unit_suburb, city, country, area_code, education, work_experience, resume_url) values (:job_id, :first_name, :last_name, :email, :street_address, :unit_suburb, :city,  :country,  :area_code, :education, :work_experience, :resume_url)")
-
-    conn.execute(query, {"job_id": job_id, "first_name": data['first_name'], "last_name": data['last_name'], "email": data['email'], "street_address" : data['street_address'], "unit_suburb" : data['unit_suburb'], "city" : data['city'], "country" : data['country'], "area_code" : data['area_code'], "education" : data['education'], "work_experience" : data['work_experience'], "resume_url" : data['resume_url']})
-                 
-                 
-
-      
-      
+    
+    conn.execute(query, {"job_id": job_id, "first_name": data['first_name'], "last_name": data['last_name'], "email": data['email'], "street_address": data['street_address'], "unit_suburb": data['unit_suburb'], "city": data['city'], "country": data['country'], "area_code": data['area_code'], "education": data['education'], "work_experience": data['work_experience'],"resume_url": data['resume_url']})

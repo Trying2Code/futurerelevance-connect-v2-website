@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from database import load_jobs_from_db, load_job_from_db, add_application_to_db
+from database import load_jobs_from_db, load_job_from_db, add_applications_to_db
 
 app = Flask(__name__)
 
@@ -41,7 +41,7 @@ def show_job(id):
 def apply_to_job(id):
     data = request.form
     job = load_job_from_db(id)
-    add_application_to_db(id, data)
+    add_applications_to_db(id, data)
     # store this in the DB
     # send an email to the applicant
     # display an acknowledgment
