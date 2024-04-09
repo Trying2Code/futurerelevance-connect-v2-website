@@ -4,11 +4,10 @@ from database import load_jobs_from_db, load_job_from_db, add_application_to_db
 app = Flask(__name__)
 
 @app.route("/")
-def hello_FutureRelevavce():
+def hello_FutureRelevance():
   jobs = load_jobs_from_db()
   return render_template('home.html',
-                         jobs=jobs,
-                         company_name='FuturRelevance Connect')
+                         jobs=jobs)
 
 @app.route("/login")
 def login_page():
