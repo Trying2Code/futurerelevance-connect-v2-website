@@ -1,0 +1,60 @@
+<h4>Application Form</h4>
+<form action="/job/{{job['id']}}/apply" method="post">
+  <div class="mb-2">
+    <label for="first_name"">First Name</label><br>
+    <input type="text" name="first_name" placeholder="First name">
+  </div>
+  
+  <div class="mb-2">
+    <label for="last_name">Last Name</label><br>
+    <input type="text" name="last_name" placeholder="Last name">
+  </div>
+  
+  <div class="mb-2">
+    <label for="email">Email</label><br>
+    <input type="text" name="email" placeholder="emazs@email.com">
+  </div>
+
+  <div class="mb-2">
+    <label for="street_address">Street Address</label><br>
+  <input type="text" name="street_address" placeholder="75 Busy street">
+</div>
+
+  <div class="mb-2">
+    <label for="unit_suburb">Suburb</label><br>
+  <input type="text" name="unit_suburb" placeholder="Unit 5, Milnerton">
+  </div>
+  
+  <div class="mb-2">
+    <label for="inputCity">City</label><br>
+  <input type="text" name="city" placeholder="Cape Town">
+  </div>
+  
+  <div class="mb-2">
+    <label for="inputCountry">Country</label><br>
+  <input type="text" name="country" placeholder="South Africa">
+  </div>
+  
+<div class="col-md-2">
+  <label for="inputZip">Zip</label>
+  <input type="text" name="area_code" placeholder="8000">
+</div>
+
+  <div class="mb-2">
+    <label>Education</label><br>
+  <textarea name="education"></textarea>
+  </div>
+
+  <div class="mb-2">
+    <label>Work Experience</label><br>
+  <textarea name="work_experience"></textarea>
+  </div>
+  <div class="mb-2">
+    <label>Resume URL</label><br>
+    <input type="text" name="resume_url" placeholder="https://example.com/resume.pdf">
+  </div>
+
+  <div class="col-md-12">
+    <input type="submit" class="btn btn-primary">
+  </div>
+  </form>
