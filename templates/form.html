@@ -1,0 +1,37 @@
+<!Doctype>
+      <html>
+        <head>
+        </head>
+        <link rel="stylesheet" href="/static/style.css"/>
+        {% include 'bootstrap.html' %}
+        <body>
+          {% include 'nav.html' %}
+        <div class="position-absolute top-50 start-50 translate-middle">
+        <h2 class="text-center mt-4 mb-4">FutureRelevance Connect</h2>
+        <h2 class="text-center">Transactions</h2>
+  
+          <form>
+            <div class="form__fieldset">
+              <label for="date" class="form__label">DATE:</label>
+              <input type="date" name="date" id="date" class="form__input"/>
+            </div>
+
+            <div class="form__fieldset">
+              <label for="amount" class="form__label">AMOUNT:</label>
+              <input type="number" name="amount" id="amount" class="form__input"/>
+            </div>
+
+            <div class="form__fieldset">
+              <label for="account" class="form__label">ACCOUNT:</label>
+              <select name="account" id="account" class="form__input form__select">
+                <option value="checking">3</option>
+                <option value="savings">9</option>
+                <option value="credit">7</option>
+              </select>
+            </div>
+
+            <div class="form__fieldset">
+              <input class="form__submit form__input" type="submit" value="Add transaction"/>
+                </form>
+              </body>
+            </html>

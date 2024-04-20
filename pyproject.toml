@@ -9,6 +9,9 @@ python = ">=3.10.0,<3.11"
 flask = "^3.0.0"
 gunicorn = "^21.2.0"
 sqlalchemy = "^2.0.29"
+psycopg2-binary = "^2.9.9"
+consultor = "^0.2.0"
+cynergy = "^1.2.0"
 
 [tool.pyright]
 # https://github.com/microsoft/pyright/blob/main/docs/configuration.md

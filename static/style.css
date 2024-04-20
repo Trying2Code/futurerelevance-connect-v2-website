@@ -1,0 +1,28 @@
+html{
+  font-size: 17;
+  font-family: "San Francisco", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+body{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.form__fieldset{
+  padding: 40px 20px;
+}
+
+.form__fieldset:not(:last-of-type){
+border-bottom: px solid rgba(0,0,0,0.10);
+}
+
+.form__input{
+  font-size: 1rem;
+}
+.form__select {
+  padding: 4px 2px;
+}
+.form__label{
+  margin-right: 20px;
+}
+
